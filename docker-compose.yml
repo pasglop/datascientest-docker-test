@@ -1,1 +1,24 @@
+version: '3.8'
+services:
+  api:
+    image: datascientest/fastapi:1.0.0
+    ports:
+      - 8000:8000
+    deploy:
+        restart_policy:
+            condition: on-failure
+  test_authentication:
+    build: .
+    environment:
+        - CICD_STEP=authentication
+        - API_URL=http://api
+        - API_PORT=8000
+        - TEST_RESULT_PATH=${TEST_RESULT_PATH}
+    volumes:
+      - ./test_results:/app/test_results
+    depends_on:
+      - api
+networks:
+    default:
+      driver: bridge
 

@@ -1,3 +1,6 @@
-pytest
-docker
-requests
+pytest==7.4.0
+pytest-reportlog
+pytest-html
+python-on-whales==0.62.0
+requests~=2.31.0
+python-dotenv~=1.0.0
