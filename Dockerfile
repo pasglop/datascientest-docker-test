@@ -1,7 +1,7 @@
 FROM python:3.10-slim
 
 ARG CICD_STEP
-ENV CICD_STEP=${CICD_STEP:-authentication}
+ENV CICD_STEP=${CICD_STEP}
 
 RUN python3 -m venv /opt/venv
 

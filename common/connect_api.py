@@ -2,6 +2,7 @@ import requests
 from dotenv import load_dotenv
 import os
 
+load_dotenv()
 
 API_URL = os.getenv('API_URL')
 API_PORT = os.getenv('API_PORT')
@@ -17,4 +18,9 @@ def status():
 
 def authenticate(user, password):
     response = requests.get(f'{API_URL}:{API_PORT}/permissions', params={'username': user, 'password': password})
+    return response
+
+def authorize(user, password, version='v1'):
+    response = requests.get(f'{API_URL}:{API_PORT}/{version}/sentiment', params={'username': user, 'password': password})
+    print(response)
     return response
