@@ -14,7 +14,8 @@ if __name__ == '__main__':
         '-v',
         f'--report-log={TEST_RESULT_PATH}/authorization.jsonl',
         f'--html={TEST_RESULT_PATH}/authorization.html',
-        '--self-contained-html'
+        '--self-contained-html',
+        f'--junitxml={TEST_RESULT_PATH}/authorization.xml'
     ])
     #close log file
     sys.stdout.close()

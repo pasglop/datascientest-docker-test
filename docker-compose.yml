@@ -34,6 +34,21 @@ services:
     depends_on:
       - api
       - test_authentication
+  test_content:
+    build:
+      context: .
+      args:
+        - CICD_STEP=content
+    environment:
+      - API_URL=${API_URL}
+      - API_PORT=${API_PORT}
+      - TEST_RESULT_PATH=${TEST_RESULT_PATH}
+    volumes:
+      - ./test_results:/app/test_results
+    depends_on:
+      - api
+      - test_authentication
+      - test_authorization
 networks:
     default:
       driver: bridge

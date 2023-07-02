@@ -12,8 +12,10 @@ if __name__ == '__main__':
     pytest.main(args=[
         '-rA',
         '-v',
-        f'--report-log={TEST_RESULT_PATH}/authentication.jsonl',
-        f'--html={TEST_RESULT_PATH}/authentication.html',
+        f'--report-log={TEST_RESULT_PATH}/content.jsonl',
+        f'--html={TEST_RESULT_PATH}/content.html',
         '--self-contained-html',
-        f'--junitxml={TEST_RESULT_PATH}/authentication.xml'
+        f'--junitxml={TEST_RESULT_PATH}/content.xml'
     ])
+    #close log file
+    sys.stdout.close()

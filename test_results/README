@@ -1,0 +1,5 @@
+Vous trouverez des répertoires avec la date du jour, et des fichiers de logs à l'intérieur.
+- Un fichier JSON par test, avec les informations de la requête, la réponse, et les informations de la requête.
+- un fichier HTML par test avec le résultat du test.
+- un fichier XML par test avec le résultat du test utilisable sur Jenkins.
+- un fichier log.txt avec les logs de l'exécution du test.
